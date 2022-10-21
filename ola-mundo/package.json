@@ -1,5 +1,11 @@
 {
   "dependencies": {
-    "@angular/cli": "^14.2.6"
+    "@angular/cli": "^14.2.6",
+    "@angular/platform-browser": "^14.2.7",
+    "@angular/platform-browser-dynamic": "^14.2.7"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.2.6",
+    "@angular/core": "^14.2.7"
   }
 }
