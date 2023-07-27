@@ -64,7 +64,7 @@ export class CalculadoraComponent implements OnInit{
     }
   }
 
-  calcular(operacao: string): void {
+  calcular(): void {
     if(this.numero2 === '0'){
       return;
     }
