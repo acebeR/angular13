@@ -5,13 +5,13 @@ import { CalculadoraService } from './services/calculadora.service';
 
 
 @NgModule({
-  declarations: [
-    CalculadoraComponent
-  ],
   imports: [
     CommonModule
   ],
+  declarations: [
+    CalculadoraComponent
+  ],
+  exports: [ CalculadoraComponent ],
   providers: [ CalculadoraService],
-  exports: [ CalculadoraComponent ]
 })
 export class CalculadoraModule { }
