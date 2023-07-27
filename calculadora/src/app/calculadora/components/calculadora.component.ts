@@ -49,7 +49,7 @@ export class CalculadoraComponent implements OnInit{
   }
 
   definirOperacao(operacao: string): void {
-    if(this.operacao === null){
+    if(this.operacao === ''){
       this.operacao = operacao;
       return;
     }
