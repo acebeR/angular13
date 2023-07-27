@@ -15,3 +15,5 @@ Projeto para aprender conceitos e arquitetura do Angular 13
 ng g component calculadora/calculadora -> para criar os arquivos com o nome calculadora, mas depois mudar a pasta para components.
 # Para criar um serviço
 ng g service calculadora/services/calculadora
+# Add bootstrap
+npm install --save bootstrap@3 
