@@ -11,6 +11,7 @@ export class CalculadoraComponent implements OnInit{
   private numero2: string = '0';
   private resultado:number = 0;
   private operacao: string = '';
+  private guarda: string = '';
 
   constructor(private calculadoraService:CalculadoraService){}
 
@@ -24,9 +25,11 @@ export class CalculadoraComponent implements OnInit{
     this.numero2 = '0';
     this.resultado = 0;
     this.operacao = '';
+    this.guarda = '';
   }
 
   adicionarNumero(numero:string): void {
+    this.guarda += numero;
     if(this.operacao === ''){
       this.numero1 = this.concatenarNumero(this.numero1, numero);
     }else{
@@ -49,6 +52,7 @@ export class CalculadoraComponent implements OnInit{
   }
 
   definirOperacao(operacao: string): void {
+    this.guarda += operacao;
     if(this.operacao === ''){
       this.operacao = operacao;
       return;
@@ -68,18 +72,23 @@ export class CalculadoraComponent implements OnInit{
     if(this.numero2 === '0'){
       return;
     }
-
-    this.resultado = this.calculadoraService.calcular(
-      parseFloat(this.numero1),parseFloat(this.numero2),this.operacao);
+    this.guarda += ' = ' + this.calculadoraService.calcular(
+      parseFloat(this.numero1),parseFloat(this.numero2),this.operacao).toString();
   }
 
-  get display(): string{
+  display(agora:string): string{
+    this.guarda += agora;
     if(this.resultado !== 0){
-      return this.resultado.toString();
+      this.guarda = this.resultado.toString();
     }
     if(this.numero2 !== '0'){
-      return this.numero2;
+      this.guarda = this.numero2;
     }
-    return this.numero1;
+    this.guarda = this.numero1;
+    return this.guarda;
+  }
+
+  get retorno(): string{
+    return this.guarda;
   }
 }
