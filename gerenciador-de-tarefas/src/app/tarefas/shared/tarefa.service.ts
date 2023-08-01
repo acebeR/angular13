@@ -22,7 +22,8 @@ export class TarefaService {
 
   buscarPorId(id:number): Tarefa {
     var tarefas: Tarefa[] = this.listarTodos();
-    var tarefa: Tarefa = tarefas.find(tarefa => tarefa.id === id);
+    var tarefa: Tarefa = new Tarefa();
+    tarefas.find(tarefa => tarefa.id === id);
     return tarefa;
   }
 
