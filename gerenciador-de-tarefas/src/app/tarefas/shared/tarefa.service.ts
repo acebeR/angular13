@@ -22,8 +22,10 @@ export class TarefaService {
 
   buscarPorId(id:number): Tarefa {
     var tarefas: Tarefa[] = this.listarTodos();
-    var tarefa: Tarefa = new Tarefa();
-    tarefas.find(tarefa => tarefa.id === id);
+    var tarefa = tarefas.find(tarefa => tarefa.id === id);
+    if (!tarefa) {
+      throw new Error(`Tarefa com ID ${id} não encontrada.`);
+    }
     return tarefa;
   }
 

@@ -6,14 +6,10 @@ import { TarefaService, Tarefa } from '../shared';
   styleUrls: ['./listar-tarefa.component.css']
 })
 export class ListarTarefaComponent implements OnInit{
-  tarefas: Tarefa[] | undefined;
+  tarefas: Tarefa[] = this.listarTodos();
   constructor(private tarefaService:TarefaService){}
 
   ngOnInit(): void {
-      this.tarefas = this.listarTodos();
-      this.tarefas = [new Tarefa(1,"Tarefa 1 ",false),
-      new Tarefa(2,"Tarefa 2 ",true)
-    ];
   }
 
   listarTodos(): Tarefa[]{
@@ -23,11 +19,15 @@ export class ListarTarefaComponent implements OnInit{
   remover($event: any,tarefa:Tarefa): void{
     $event.preventDefault();
     if(confirm('Deseja remover a tarefa' + tarefa.nome + '?')){
-
+      this.tarefaService.remover(tarefa.id === undefined? 0: tarefa.id);
+      this.tarefas = this.tarefaService.listarTodos();
     }
   }
   alterarStatus(tarefa:Tarefa): void{
-
+    if(confirm('Deseja alterar a tarefa' + tarefa.nome + '?')){
+      this.tarefaService.alterarStatus(tarefa.id === undefined? 0: tarefa.id);
+      this.tarefas = this.tarefaService.listarTodos();
+    }
   }
 
 }
