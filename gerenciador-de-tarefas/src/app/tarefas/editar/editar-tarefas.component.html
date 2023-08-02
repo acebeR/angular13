@@ -1,4 +1,4 @@
-<h1>Editar Tarefa</h1>
+<!-- <h1>Editar Tarefa</h1>
 
 <div class="well">
   <form #formTarefa="ngForm">
@@ -27,4 +27,55 @@
       </a>
     </div>
   </form>
+</div> -->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style>
+  .lead { font-size: 33px;margin-bottom:0px; }
+</style>
+
+<div class="container">
+  <div class="row">
+    <h2 class="col-md-9" style="margin-left: 30px;">Atualizar Tarefas</h2>
+  </div>
+  <br>
+  <form #formTarefa="ngForm">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-info">
+              <div class="panel-body text-center">
+                <div class="" >
+                  <textarea type="text" class="col-md-12" style="height: 200px;text-align: justify;" id="nome" name="nome"
+                  [(ngModel)]="tarefa.nome" #nome="ngModel" minlength="5" required ></textarea>
+                </div>
+              </div>
+              <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger">
+                <div [hidden]="!nome.errors['required']">
+                  Digite a Tarefa.
+                </div>
+                <div [hidden]="!nome.errors['minlength']">
+                  A tarefa deve conter ao menos 5 caracteres.
+                </div>
+              </div>
+              <ul class="list-group list-group-flush text-center">
+                  <li class="list-group-item"><i class="icon-ok text-danger"></i>
+                      <input type="submit" class="btn btn-success"
+                      (click)="atualizar()"
+                      value="Atualizar"
+                      [disabled]="!formTarefa.form.valid" />&nbsp;&nbsp;
+                      <button [routerLink]="['/tarefas']" class="btn btn-defoult">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+                          Voltar
+                        </span>
+                      </button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </div>
+  </form>
 </div>
+
