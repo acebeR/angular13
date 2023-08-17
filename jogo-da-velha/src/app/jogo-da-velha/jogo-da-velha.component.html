@@ -1,13 +1,13 @@
 <div>
   <h2>Jogo da Velha</h2>
-  <div>
-    <a href="#" class="botao">Iniciar</a>
+  <div class="principal" *ngIf="showInicio">
+    <a  href="#" class="botao">Iniciar</a>
   </div>
 
   <div>
     <ul>
-      <li class="kz-border-bottom kz-border-rigth"></li>
-      <li class="kz-border-bottom kz-border-rigth"></li>
+      <li class="kz-border-bottom kz-border-rigth kz-img-x"></li>
+      <li class="kz-border-bottom kz-border-rigth kz-img-o"></li>
       <li class="kz-border-bottom"></li>
       <li class="kz-border-bottom kz-border-rigth"></li>
       <li class="kz-border-bottom kz-border-rigth"></li>
@@ -18,7 +18,7 @@
     </ul>
   </div>
 
-  <div>
+  <div *ngIf="showFinal">
     <span>
       <p>Você venceu!!!</p>
       <p>Você perdeu...</p>

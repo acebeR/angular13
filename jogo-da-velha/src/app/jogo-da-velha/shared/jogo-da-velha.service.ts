@@ -10,18 +10,18 @@ export class JogoDaVelhaService {
   private readonly VAZIO: number = 0;
 
   private tabuleiro: any;
-  private numMovimentos: number;
+  private numMovimentos!: number;
   private vitoria: any;
 
-  private _jogador: number;
-  private _shoInicio: boolean;
-  private _showTabuleiro: boolean;
-  private _showFinal: boolean;
+  private _jogador!: number;
+  private _showInicio!: boolean;
+  private _showTabuleiro!: boolean;
+  private _showFinal!: boolean;
 
   constructor() { }
 
   inicializar(){
-    this._shoInicio = true;
+    this._showInicio = true;
     this._showTabuleiro = false;
     this._showFinal = false;
     this.numMovimentos = 0;
@@ -39,7 +39,7 @@ export class JogoDaVelhaService {
 
 
   get showInicio(): boolean{
-    return this._shoInicio;
+    return this._showInicio;
   }
 
   get showFinal(): boolean{
@@ -51,7 +51,7 @@ export class JogoDaVelhaService {
   }
 
   iniciarJogo(): void{
-    this._shoInicio = false;
+    this._showInicio = false;
     this._showTabuleiro = true;
   }
 
@@ -125,7 +125,7 @@ export class JogoDaVelhaService {
     let jogada: number[] = this.obterJogada(this.O);
 
     if(jogada.length <=0){
-      jogada = this.obterJogada(this.x);
+      jogada = this.obterJogada(this.X);
     }
 
     if(jogada.length <=0){
@@ -193,7 +193,7 @@ export class JogoDaVelhaService {
   novoJogo():void {
     this.inicializar();
     this._showFinal = false;
-    this._shoInicio = false;
+    this._showInicio = false;
     this.tabuleiro = true;
   }
 }

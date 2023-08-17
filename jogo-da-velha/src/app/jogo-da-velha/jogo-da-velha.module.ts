@@ -8,6 +8,7 @@ import { JogoDaVelhaService } from './shared';
   declarations: [
     JogoDaVelhaComponent
   ],
+  exports: [JogoDaVelhaComponent],
   imports: [
     CommonModule
   ],
