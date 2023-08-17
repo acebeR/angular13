@@ -26,6 +26,7 @@ export class JogoDaVelhaComponent implements OnInit{
   }
 
   iniciarJogo(): void{
+    console.log("============<<<<");
     this.jogoDaVelhaService.iniciarJogo();
   }
 
@@ -42,6 +43,10 @@ export class JogoDaVelhaComponent implements OnInit{
   }
   exibirVitoria(posX:number,posY:number ):boolean{
     return this.jogoDaVelhaService.exibirVitoria(posX,posY);
+  }
+
+  novoJogo(): void{
+    this.jogoDaVelhaService.inicializar();
   }
 
   get jogador():number{

@@ -31,6 +31,7 @@ export class JogoDaVelhaService {
   }
 
   inicializarTabuleiro(): void{
+    console.log("-----------");
     this.tabuleiro = [this.TAM_TAB];
     for(let i = 0; i< this.TAM_TAB; i++){
       this.tabuleiro[i] = [this.VAZIO,this.VAZIO,this.VAZIO]
@@ -86,43 +87,85 @@ export class JogoDaVelhaService {
   {
     let fim: any = false;
 
-    if(
-      tabuleiro[linha][0] === jogador &&
-      tabuleiro[linha][1] === jogador &&
-      tabuleiro[linha][2] === jogador
-      ){
-        fim = [[linha,0],[linha,1],[linha,2]]
-      }
-      if(
-        tabuleiro[linha][0] === jogador &&
-        tabuleiro[linha][1] === jogador &&
-        tabuleiro[linha][2] === jogador
-      )
-      {
-        fim = [[0,coluna],[1,coluna],[2,coluna]]
-      }
+    console.log("---> Tabuleiro: ", tabuleiro);
+    //console.log("---> Linha: ", linha, " Jogador - ", jogador);
+    // if(
+    //   tabuleiro[linha][0] === jogador &&
+    //   tabuleiro[linha][1] === jogador &&
+    //   tabuleiro[linha][2] === jogador
+    //   ){
+    //     console.log("---> 1");
+    //     fim = [[linha,0],[linha,1],[linha,2]]
+    //   }
+    //   if(
+    //     tabuleiro[linha][0] === jogador &&
+    //     tabuleiro[linha][1] === jogador &&
+    //     tabuleiro[linha][2] === jogador
+    //   )
+    //   {
+    //     console.log("---> 2");
+    //     fim = [[0,coluna],[1,coluna],[2,coluna]]
+    //   }
 
+      if(
+        tabuleiro[0][0] === jogador &&
+        tabuleiro[0][1] === jogador &&
+        tabuleiro[0][2] === jogador
+      ){
+        fim = [[0,0],[0,1],[0,2]]
+      }
       if(
         tabuleiro[0][0] === jogador &&
         tabuleiro[1][1] === jogador &&
         tabuleiro[2][2] === jogador
       ){
-
         fim = [[0,0],[1,1],[2,2]]
       }
-
       if(
         tabuleiro[0][2] === jogador &&
         tabuleiro[1][1] === jogador &&
         tabuleiro[2][0] === jogador
       ){
-
         fim = [[0,2],[1,1],[2,0]]
       }
+      if(
+        tabuleiro[0][1] === jogador &&
+        tabuleiro[1][1] === jogador &&
+        tabuleiro[2][1] === jogador
+      ){
+        fim = [[0,1],[1,1],[2,1]]
+      }
+      if(
+        tabuleiro[0][2] === jogador &&
+        tabuleiro[1][2] === jogador &&
+        tabuleiro[2][2] === jogador
+      ){
+        fim = [[0,2],[1,2],[2,2]]
+      }
+      if(
+        tabuleiro[1][0] === jogador &&
+        tabuleiro[1][1] === jogador &&
+        tabuleiro[1][2] === jogador
+      ){
+        fim = [[1,0],[1,1],[1,2]]
+      }
+      if(
+        tabuleiro[2][0] === jogador &&
+        tabuleiro[2][1] === jogador &&
+        tabuleiro[2][2] === jogador
+      ){
+        fim = [[2,0],[2,1],[2,2]]
+      }
 
+      if(
+        tabuleiro[2][0] === jogador &&
+        tabuleiro[2][1] === jogador &&
+        tabuleiro[2][2] === jogador
+      ){
+        fim = [[2,0],[2,1],[2,2]]
+      }
 
       return fim;
-
   }
 
   cpuJogar(): void{
@@ -178,16 +221,16 @@ export class JogoDaVelhaService {
 
   exibirVitoria(posX: number,posY: number):boolean{
     let exibirVitoria: boolean = false;
-
+    console.log("this.vitoria - ", this.vitoria);
     if(!this.vitoria){
       return exibirVitoria;
     }
 
     for(let pos of this.vitoria){
+      console.log("pos[0] -",pos[0], "posX- ",posX, "pos[1] - ",pos[1], "posY-",posY);
       if(pos[0] === posX && pos[1] === posY){
         exibirVitoria = true;
         break;
-
       }
     }
 
