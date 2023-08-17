@@ -46,6 +46,10 @@ export class JogoDaVelhaService {
     return this._showFinal;
   }
 
+  get showTabuleiro(): boolean{
+    return this._showTabuleiro;
+  }
+
   get jogador(): number{
     return this._jogador;
   }
