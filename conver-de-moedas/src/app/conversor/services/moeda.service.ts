@@ -4,7 +4,7 @@ import { Moeda } from '../models';
   providedIn: 'root'
 })
 export class MoedaService {
-  private moedas: Moeda[];
+  private moedas: Moeda[] | undefined;
   constructor() { }
 
   private moedasObj = [
