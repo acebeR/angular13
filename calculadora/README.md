@@ -1,6 +1,8 @@
 # Calculadora
 Projeto para aprender conceitos e arquitetura do Angular 13
 
+![alt text](https://github.com/acebeR/angular13/blob/main/calculadora/imgs/telas.gif?raw=true)
+
 # Anotações
 # Criar um projeto novo
 - ng new calculadora
