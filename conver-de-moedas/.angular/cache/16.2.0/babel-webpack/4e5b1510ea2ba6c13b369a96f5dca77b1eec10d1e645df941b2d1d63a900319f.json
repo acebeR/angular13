@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from './conversor.module';","map":{"version":3,"names":[],"sources":["C:\\Users\\acebe\\Documents\\Git\\angular13\\conver-de-moedas\\src\\app\\conversor\\index.ts"],"sourcesContent":["export * from './conversor.module';\r\n"],"mappings":"AAAA,cAAc,oBAAoB"},"metadata":{},"sourceType":"module","externalDependencies":[]}
