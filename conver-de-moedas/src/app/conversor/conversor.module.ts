@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule} from '@angular/http';
 import { ConversorComponent } from './components';
-
+import { MoedaService, ConversorService } from './services';
 
 
 @NgModule({
@@ -9,9 +10,10 @@ import { ConversorComponent } from './components';
     ConversorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, HttpModule
   ],
-  exports: [ConversorComponent]
+  exports: [ConversorComponent],
+  providers: [MoedaService,ConversorService]
 
 })
 export class ConversorModule { }
