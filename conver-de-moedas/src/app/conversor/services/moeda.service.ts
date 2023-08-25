@@ -4,13 +4,13 @@ import { Moeda } from '../models';
   providedIn: 'root'
 })
 export class MoedaService {
-  private moedas: Moeda[] | undefined;
+  private moedas!: Moeda[];
   constructor() { }
 
   private moedasObj = [
     {"sigla":"AUD", "descricao": "Dolar Australiano"},
     {"sigla":"BRL", "descricao": "Real Brasileiro"},
-    {"sigla":"EUR", "descricao": "Euro"},
+    {"sigla":"EUR", "descricao": "Euro"}
   ]
 
   listarTodas() : Moeda[]{
