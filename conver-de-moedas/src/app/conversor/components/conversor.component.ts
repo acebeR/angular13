@@ -14,7 +14,7 @@ export class ConversorComponent implements OnInit {
   public moedas: Moeda[] = [{"sigla":"AUD", "descricao": "Dolar Australiano"},
   {"sigla":"BRL", "descricao": "Real Brasileiro"},
   {"sigla":"EUR", "descricao": "Euro"}];
-  private conversaoResponse!: ConversaoResponse;
+  public conversaoResponse!: ConversaoResponse;
 
   @ViewChild('conversaoForm') conversaoForm!: NgForm;
   constructor(    private moedaService: MoedaService, private conversorService: ConversorService) {}

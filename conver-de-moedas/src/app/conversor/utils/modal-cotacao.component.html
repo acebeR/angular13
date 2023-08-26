@@ -1,5 +1,6 @@
 <div
   class="modal fade"
+  [id]="id"
   tabindex="-1"
   role="dialog"
   aria-labelledby="modalLabel">
@@ -18,9 +19,9 @@
       </div>
       <div class="modal-body text-center">
         <div>
-          <h2>{{conversao.valor}{{conversao.moedaDe}}}={{valorConvertido}}{{conversao.moedaPara}}</h2>
+          <h2>{{conversao.valor}}{{conversao.moedaDe}}={{valorConvertido}}{{conversao.moedaPara}}</h2>
           <p>1 {{conversao.moedaPara}} = {{cotacaoPara}} {{conversao.moedaDe}} /
-            1 {{conversao.moedaDe}} = {{cotacao}} {{ conversao.moedaPara}}</p>
+            1 {{conversao.moedaDe}} = {{cotacaoDe}} {{ conversao.moedaPara}}</p>
         </div>
       </div>
       <div class="modal-footer">
