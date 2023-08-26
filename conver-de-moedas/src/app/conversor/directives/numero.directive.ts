@@ -1,4 +1,4 @@
-import { Directive, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 import { NG_VALUE_ACCESSOR,ControlValueAccessor } from '@angular/forms'
 @Directive({
   selector: '[numero]',
