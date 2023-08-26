@@ -18,13 +18,15 @@
       <div style="margin-left: 20px;">Valor:{{conversao.valor}}</div>
       <br/>
       <select name="moedaDe" class="form-control" style="margin-left: 20px;"
-      [(ngModel)]="conversao.valor" required>
-        <option></option>
+      [(ngModel)]="conversao.moedaDe" required>
+        <option *ngFor="let moeda of moedas" [value]="moeda.sigla" >
+        {{ moeda.sigla }} - {{moeda.descricao}}
+        </option>
       </select>
       <br/>
       <span class="glyphicon glyphicon-arrow-rigth" arial-hidden="true" style="margin-left: 20px;"></span>
       <select name="moedaPara" class="form-control" style="margin-left: 20px;"
-      [(ngModel)]="conversao.moedaDe" required>
+      [(ngModel)]="conversao.moedaPara" required>
         <option *ngFor="let moeda of moedas" [value]="moeda.sigla" >
         {{ moeda.sigla }} - {{moeda.descricao}}
         </option>
@@ -33,6 +35,7 @@
       <input type="submit" value="Converter" class="btn btn-success" style="margin-left: 20px;"
        data-toggle="modal" data-target="#modalCotacao"
        (click)="converter()" [disabled]="!conversaoForm.form.valid">
+
     </form>
 
   </div>

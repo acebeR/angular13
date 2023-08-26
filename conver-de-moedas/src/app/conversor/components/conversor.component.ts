@@ -11,9 +11,7 @@ export class ConversorComponent implements OnInit {
 
   public possuiErro = false;
   public conversao: Conversao = new Conversao('','',0);
-  public moedas: Moeda[] = [{"sigla":"AUD", "descricao": "Dolar Australiano"},
-  {"sigla":"BRL", "descricao": "Real Brasileiro"},
-  {"sigla":"EUR", "descricao": "Euro"}];
+  public moedas: Moeda[] = this.moedaService.listarTodas();
   public conversaoResponse!: ConversaoResponse;
 
   @ViewChild('conversaoForm') conversaoForm!: NgForm;
@@ -30,9 +28,10 @@ export class ConversorComponent implements OnInit {
 
   converter(): void{
     if(this.conversaoForm.form.valid){
-      this.conversorService.converter(this.conversao)
-      .subscribe(response => this.conversaoResponse = response,
-        error => this.possuiErro = true);
+      // this.conversorService.converter(this.conversao)
+      // .subscribe(response => this.conversaoResponse = response,
+      //   error => this.possuiErro = true);
+      this.conversorService.converter(this.conversao).subscribe(response=> this.conversaoResponse = response);
     }
   }
 }

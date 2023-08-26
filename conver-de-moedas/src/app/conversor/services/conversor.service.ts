@@ -11,7 +11,7 @@ import {
   providedIn: 'root'
 })
 export class ConversorService {
-  private readonly BASE_URL = "http://api.fixer.io/latest";
+  private readonly BASE_URL = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL";
 
   constructor(
     private http:HttpClient
@@ -21,7 +21,7 @@ export class ConversorService {
     let params = `?base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`
 
 
-    return this.http.get(this.BASE_URL + params).pipe(
+    return this.http.get(this.BASE_URL).pipe(
       map((response: any) => response as ConversaoResponse),
       catchError((error: any) => throwError(error))
     );
