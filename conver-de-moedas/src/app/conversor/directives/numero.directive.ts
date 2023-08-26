@@ -5,8 +5,9 @@ import { NG_VALUE_ACCESSOR,ControlValueAccessor } from '@angular/forms'
   providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: NumeroDirective,multi: true }]
 })
 export class NumeroDirective implements ControlValueAccessor{
-  onTouches: any;
-  OnChange: any;
+  onTouche: any;
+  onChange: any;
+
   constructor( private el: ElementRef) { }
   @HostListener('keyup',['$event'])
   onKeyUp($event: any){
@@ -20,6 +21,18 @@ export class NumeroDirective implements ControlValueAccessor{
     }
 
     $event.target.value = valor;
-    this.OnChange(valor);
+    this.onChange(valor);
+  }
+
+  registerOnChange(fn: any): void{
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void{
+    this.onTouche = fn;
+  }
+
+  writeValue(value: any): void{
+    this.el.nativeElement.value = value;
   }
 }
