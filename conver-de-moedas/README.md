@@ -6,3 +6,5 @@
 # Rodar
 - npm install
 - ng serve
+
+![alt text](https://github.com/acebeR/angular13/blob/main/conver-de-moedas/gifs/cotacao.gif?raw=true)
