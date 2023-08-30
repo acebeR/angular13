@@ -11,6 +11,9 @@ import { DadosService } from './dados.service';
   imports: [
     CommonModule
   ],
+  exports:[
+    DashboardComponent
+  ],
   providers: [DadosService]
 })
 export class DashboardModule { }
