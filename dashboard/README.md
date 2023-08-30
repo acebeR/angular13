@@ -1,5 +1,5 @@
 # Dashboard
-
+![alt text](https://github.com/acebeR/angular13/blob/main/dashboard/gifs/Graficos.gif?raw=true)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
 ## Development server
