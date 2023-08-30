@@ -1,1 +1,47 @@
-<p>conversor works!</p>
+
+<br/>
+<div class="alert alert-danger" role="alert"
+*ngIf="possuiErro"> Erro obtendo dados. Tente novamente.</div>
+
+<div class="painel panel-success">
+  <div class="panel-heading">
+    Selecione a moeda a ser convertida.
+  </div>
+  <div class="panel-body text-center">
+    <form #conversaoForm="ngForm" class="form-inline">
+      <input
+      type="text"
+      name="valor"
+      class="form-control text-right"
+      placeholder="0"
+      [(ngModel)]="conversao.valor" numero required>
+      <div style="margin-left: 20px;">Valor:{{conversao.valor}}</div>
+      <br/>
+      <select name="moedaDe" class="form-control" style="margin-left: 20px;"
+      [(ngModel)]="conversao.moedaDe" required>
+        <option *ngFor="let moeda of moedas" [value]="moeda.sigla" >
+        {{ moeda.sigla }} - {{moeda.descricao}}
+        </option>
+      </select>
+      <br/>
+      <span class="glyphicon glyphicon-arrow-rigth" arial-hidden="true" style="margin-left: 20px;"></span>
+      <select name="moedaPara" class="form-control" style="margin-left: 20px;"
+      [(ngModel)]="conversao.moedaPara" required>
+        <option *ngFor="let moeda of moedas" [value]="moeda.sigla" >
+        {{ moeda.sigla }} - {{moeda.descricao}}
+        </option>
+      </select>
+      <br/>
+      <input type="submit" value="Converter" class="btn btn-success" style="margin-left: 20px;"
+       data-toggle="modal" data-target="#modalCotacao"
+       (click)="converter()" [disabled]="!conversaoForm.form.valid">
+
+    </form>
+
+  </div>
+  <modal-cotacao
+  [id]="'modalCotacao'"
+  [conversaoResponse]="conversaoResponse"
+  [conversao]="conversao" (onConfirm)="init()"></modal-cotacao>
+</div>
+
