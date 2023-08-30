@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class DadosService {
   readonly dados = [['Janeiro', 33],
   ['Fevereiro', 68],
-  ['Marco', 49],
+  ['Marco', 100],
   ['Abril', 15],
   ['Maio', 80],
   ['Junho', 27]
