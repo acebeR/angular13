@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component,OnInit } from '@angular/core';
 import { DadosService } from './dados.service';
+
 
 declare var google: any;
 @Component({
@@ -8,7 +8,7 @@ declare var google: any;
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
   private dados: any;
 
   constructor(private dadosService: DadosService){}
@@ -17,13 +17,13 @@ export class DashboardComponent {
     this.dadosService.obterDados().subscribe(
       dados=>{
         this.dados = dados;
-        this.ngOnInit();
+        this.init();
       }
     )
   }
 
   init(): void{
-    if(typeof(google) !== undefined){
+    if(typeof(google) !== 'undefined'){
       google.charts.load('current', {'packages': ['corechart']});
       setTimeout(() => {
         google.charts.setOnLoadCallback(this.exibirGraficos());
@@ -47,7 +47,7 @@ export class DashboardComponent {
   }
 
   obterDataTable(): any{
-    const data = google.visualization.DataTable();
+    const data = new google.visualization.DataTable();
     data.addColumn('string','Mes');
     data.addColumn('number','Quantidade');
     data.addRows(this.dados);
