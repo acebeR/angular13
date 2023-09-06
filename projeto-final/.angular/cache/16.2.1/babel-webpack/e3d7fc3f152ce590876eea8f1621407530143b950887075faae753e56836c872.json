@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from './jogo-da-velha.service';","map":{"version":3,"names":[],"sources":["C:\\Users\\acebe\\Documents\\Git\\angular13\\projeto-final\\src\\app\\jogo-da-velha\\shared\\index.ts"],"sourcesContent":["export * from './jogo-da-velha.service'\r\n"],"mappings":"AAAA,cAAc,yBAAyB"},"metadata":{},"sourceType":"module","externalDependencies":[]}
