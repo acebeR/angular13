@@ -1,0 +1,75 @@
+<!-- <div style="margin: 300px;
+margin-top: -5px;">
+  <div>
+    <h1>Tarefas</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tarefa</th>
+          <th>Concluida</th>
+          <th class="text-center">
+            <a [routerLink]="['/tarefas/cadastrar']" class="btn btn-success" >
+              <span style="width: 35px;" class="glyphicon glyphicon-plus" aria-hidden="true">&nbsp;</span>Novo
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarefa of tarefas">
+          <td style="background-color:white !important" [class.success]="!tarefa.concluida"> {{tarefa.nome}}</td>
+          <td style="width: 70px;background-color:white !important" class="text-center">
+            <input type="checkbox" (click)="alterarStatus(tarefa)"
+            [value]="tarefa.id"
+            [checked]="tarefa.concluida"
+            (click)="alterarStatus(tarefa)"
+            ></td>
+          <td class="text-center" style="width: 200px;background-color:white !important">
+              <a [routerLink]="['/tarefas/editar/',tarefa.id]" title="Editar" alt="Editar" class="btn btn-info">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true">&nbsp;</span>Editar</a>
+          </td>
+          <td class="text-center" style="width: 200px;background-color:white !important">
+              <a href="#" title="Remover" alt="Remover" (click)="remover($event,tarefa)" class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true">&nbsp;</span>Remover</a>
+            </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <p *ngIf="tarefas == undefined">Nenhuma tarefa cadastrada</p>
+  </div>
+</div> -->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+  .lead { font-size: 33px;margin-bottom:0px; }
+</style>
+
+<div class="container">
+  <div class="row">
+    <h2 class="col-md-9">Gerenciador de Tarefas</h2>
+    <a [routerLink]="['/tarefas/cadastrar']" class="btn btn-success col-md-2 text-left" style="margin-left: 80px;">
+      <span style="width: 35px;" class="glyphicon glyphicon-plus" aria-hidden="true">&nbsp;</span>Nova Tarefa
+    </a>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-md-4" *ngFor="let tarefa of tarefas">
+        <div class="panel panel-info">
+            <div class="panel-body">
+                <textarea style="height: 200px;text-align: justify;" class="col-md-12"  [class.success]="!tarefa.concluida">
+                   {{tarefa.nome}}</textarea>
+            </div>
+            <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item"><i class="icon-ok text-danger"></i>
+                  <a [routerLink]="['/tarefas/editar/',tarefa.id]" title="Editar" alt="Editar" class="btn btn-info">
+                  <span class="glyphicon glyphicon-pencil" aria-hidden="true">&nbsp;</span>Editar</a>&nbsp;&nbsp;
+                  <a href="#" title="Remover" alt="Remover" (click)="remover($event,tarefa)" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true">&nbsp;</span>Remover</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>

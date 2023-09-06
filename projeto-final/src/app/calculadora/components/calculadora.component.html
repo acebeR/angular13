@@ -1,0 +1,34 @@
+<div class="calculator card" style="margin: 40px;">
+
+  <input [value]="retorno" type="text" class="calculator-screen z-depth-1" value="" disabled />
+
+  <div class="calculator-keys">
+
+    <button (click)="definirOperacao('+')" type="button" class="operator btn btn-info" value="+">+</button>
+    <button (click)="definirOperacao('-')" type="button" class="operator btn btn-info" value="-">-</button>
+    <button (click)="definirOperacao('*')" type="button" class="operator btn btn-info" value="*">&times;</button>
+    <button (click)="definirOperacao('/')" type="button" class="operator btn btn-info" value="/">&divide;</button>
+
+    <button (click)="adicionarNumero('7')" type="button" value="7" class="btn btn-light waves-effect">7</button>
+    <button (click)="adicionarNumero('8')" type="button" value="8" class="btn btn-light waves-effect">8</button>
+    <button (click)="adicionarNumero('9')" type="button" value="9" class="btn btn-light waves-effect">9</button>
+
+
+    <button (click)="adicionarNumero('4')" type="button" value="4" class="btn btn-light waves-effect">4</button>
+    <button (click)="adicionarNumero('5')" type="button" value="5" class="btn btn-light waves-effect">5</button>
+    <button (click)="adicionarNumero('6')" type="button" value="6" class="btn btn-light waves-effect">6</button>
+
+
+    <button (click)="adicionarNumero('1')" type="button" value="1" class="btn btn-light waves-effect">1</button>
+    <button (click)="adicionarNumero('2')" type="button" value="2" class="btn btn-light waves-effect">2</button>
+    <button (click)="adicionarNumero('3')" type="button" value="3" class="btn btn-light waves-effect">3</button>
+
+
+    <button (click)="adicionarNumero('0')" type="button" value="0" class="btn btn-light waves-effect">0</button>
+    <button (click)="adicionarNumero('.')" type="button" class="decimal function btn btn-secondary" value=".">.</button>
+    <button (click)="limpar()"type="button" class="all-clear function btn btn-danger btn-sm" value="all-clear">AC</button>
+
+    <button (click)="calcular()" type="button" class="equal-sign operator btn btn-default" value="=">=</button>
+
+  </div>
+</div>

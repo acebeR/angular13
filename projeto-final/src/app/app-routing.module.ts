@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CalculadoraComponent } from './calculadora';
 import { DashboardComponent } from './dashboard';
+import { CalculadoraComponent } from './calculadora';
 import { ConversorComponent } from './conversor';
-import { EditarTarefasComponent } from './tarefas';
 import { JogoDaVelhaComponent } from './jogo-da-velha';
+import { CadastrarTarefaComponent, EditarTarefasComponent, ListarTarefaComponent } from './tarefas';
+
+
 
 export const routes: Routes = [
   {
@@ -18,10 +20,24 @@ export const routes: Routes = [
   {
     path:'conversor',
     component: ConversorComponent
-  },  {
-    path:'gerenciador',
+  },
+  {
+    path:'tarefas',
+    redirectTo: 'tarefas/listar'
+  },
+  {
+    path:'tarefas/listar',
+    component: ListarTarefaComponent
+  },
+  {
+    path:'tarefas/cadastrar',
+    component: CadastrarTarefaComponent
+  },
+  {
+    path:'tarefas/editar/:id',
     component: EditarTarefasComponent
-  },  {
+  },
+  {
     path:'jogo',
     component: JogoDaVelhaComponent
   }
