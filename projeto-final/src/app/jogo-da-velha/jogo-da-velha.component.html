@@ -1,7 +1,7 @@
 <div style="margin: 40%;margin-top: 5%;">
   <h2>Jogo da Velha</h2>
   <div class="principal" *ngIf="showInicio">
-    <a  href="#" class="botao" (click)="iniciarJogo()">Iniciar</a>
+    <a  class="botao" (click)="iniciarJogo($event)">Iniciar</a>
   </div>
 
   <div *ngIf="showTabuleiro">
@@ -88,7 +88,7 @@
       <p *ngIf="jogador==1">Você perdeu...</p>
       <p *ngIf="jogador==0">Empate!</p>
       <br/>
-      <a href="#" class="botao" (click)="novoJogo()"> Jogar Novamente</a>
+      <a class="botao" (click)="novoJogo($event)"> Jogar Novamente</a>
     </span>
   </div>
 </div>

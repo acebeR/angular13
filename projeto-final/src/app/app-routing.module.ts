@@ -10,6 +10,11 @@ import { CadastrarTarefaComponent, EditarTarefasComponent, ListarTarefaComponent
 
 export const routes: Routes = [
   {
+    path:'',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  {
     path:'dashboard',
     component: DashboardComponent
   },
@@ -17,10 +22,10 @@ export const routes: Routes = [
     path:'calculadora',
     component: CalculadoraComponent
   },
-  {
-    path:'conversor',
-    component: ConversorComponent
-  },
+  // {
+  //   path:'conversor',
+  //   component: ConversorComponent
+  // },
   {
     path:'tarefas',
     redirectTo: 'tarefas/listar'
@@ -38,7 +43,7 @@ export const routes: Routes = [
     component: EditarTarefasComponent
   },
   {
-    path:'jogo',
+    path:'jogo-da-velha',
     component: JogoDaVelhaComponent
   }
 ];

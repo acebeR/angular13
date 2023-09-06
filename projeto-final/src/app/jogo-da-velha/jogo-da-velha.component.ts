@@ -25,7 +25,7 @@ export class JogoDaVelhaComponent implements OnInit{
     return this.jogoDaVelhaService.showFinal;
   }
 
-  iniciarJogo(): void{
+  iniciarJogo($event): void{
     console.log("============<<<<");
     this.jogoDaVelhaService.iniciarJogo();
   }
@@ -45,7 +45,7 @@ export class JogoDaVelhaComponent implements OnInit{
     return this.jogoDaVelhaService.exibirVitoria(posX,posY);
   }
 
-  novoJogo(): void{
+  novoJogo($event): void{
     this.jogoDaVelhaService.inicializar();
   }
 
