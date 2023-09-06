@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Visualizar Itens</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+      </button>
+      <a class="navbar-brand" href="#">Projeto Final</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#" > Inicial</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspoup="true" aria-expanded="false">
+            Projetos <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="calculadora">Calculadora</a></li>
+            <li><a href="conversor">Conversor de Moedas</a></li>
+            <li><a href="gerenciador">Gerenciador de Tarefas</a></li>
+            <li><a href="jogo">Jogo da Velha</a></li>
+            <li><a href="dashboard">DashBoard</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
